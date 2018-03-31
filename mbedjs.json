@@ -1,0 +1,9 @@
+{
+	"source": [
+		"."
+	],
+	"includes": [
+		"echo/echo_lib.h"
+	],
+	"name": "echo"
+}
