@@ -10,7 +10,7 @@ public:
 
     std::string getNameOfClass();
 
-    void printString( const char *s );
+    void printString( const char *s, int len );
 
 
 private:
