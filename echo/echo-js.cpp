@@ -132,15 +132,17 @@ DECLARE_CLASS_FUNCTION(Echo, printString) {
 
     jerry_char_t buffer[100];
     int res;
+    int size = (int) jerry_get_string_size(args[0]);
 
-    if( jerry_get_string_size(args[0]) < 100 )
+    if(  size < 100 )
     {
          res = jerry_string_to_char_buffer( args[0], buffer, 100 );
+         buffer[size] = '\0';
     }
 
-    if( res == jerry_get_string_size(args[0]) )
+    if( res == size )
     {
-        native_ptr->printString((const char *)buffer);
+        native_ptr->printString((const char *)buffer, size );
     }
     else
     {
